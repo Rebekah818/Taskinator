@@ -1,6 +1,6 @@
 
-
-var buttonEl = document.querySelector("#save-task");
+// button functionality
+var formEl = document.querySelector("#task-form");
 var taskToDoEl = document.querySelector("#tasks-to-do");
 
 
@@ -8,7 +8,10 @@ var taskToDoEl = document.querySelector("#tasks-to-do");
 
 // make createTaskHandler to dynnamically create the task item
 
-var createTaskHandler = function() {
+var createTaskHandler = function(event) {
+
+    event.preventDefault();
+
     var listItemEl = document.createElement("li");
     listItemEl.className = "task-item";
     listItemEl.textContent = "this is a new task.";
@@ -16,4 +19,4 @@ var createTaskHandler = function() {
 
 };
 
-buttonEl.addEventListener("click", createTaskHandler);
+formEl.addEventListener("submit", createTaskHandler);
